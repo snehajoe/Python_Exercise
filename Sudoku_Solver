@@ -1,9 +1,12 @@
 /// You can input your Sudoku puzzle as a list of lists and run the solve_sudoku function to solve it using this code.
 
 def is_valid(board, row, col, num):
+    # Check if the number is valid in the row or column
     for i in range(9):
         if board[row][i] == num or board[i][col] == num:
             return False
+
+    # Check if the number is valid in the 3x3 grid
     start_row, start_col = 3 * (row // 3), 3 * (col // 3)
     for i in range(3):
         for j in range(3):
